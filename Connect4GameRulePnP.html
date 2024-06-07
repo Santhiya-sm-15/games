@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Connect4Game</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <script src="bootstrap.min.js"></script>
+        <style>
+            @font-face {
+            font-family: 'Forte';
+            src: url('fonts/Forte.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+            body
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: black;
+                height: 100vh; 
+                margin: 0;
+            }
+            .container-fluid
+            {
+                margin-top: 90px;
+                display: flex;
+                width: auto;
+                height: 60px; 
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                font-family: 'forte';
+                font-size: 40px;
+                color: black;
+                background: white;
+                border: 1px solid white;
+                border-radius: 25px;
+                overflow: hidden;
+                animation: animate 5s infinite;
+            }
+            @keyframes animate
+            {
+                0%{box-shadow: 0 0 50px #0ef;}
+                25%{box-shadow: 0 0 50px green;}
+                50%{box-shadow: 0 0 50px rgb(241, 52, 241);}
+                75%{box-shadow: 0 0 50px red;}
+                100%{box-shadow: 0 0 50px blue;}
+            }
+            .container
+            {
+                margin-top: 20px;
+                color:white;
+                font-size: 20px;
+                font-family: 'Times new roman';
+                justify-content: center;
+                align-items: center;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+            .btn
+            {
+                background-color:green;
+                box-shadow:0 0 30px white;
+                color:white;
+                width: auto;
+                height: 55px;
+                border-radius:25px;
+                font-size: 20px;
+                font-family: 'Raleway';
+                margin-top: 20px;
+            }
+            .btn:hover
+            {
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">&nbsp;&nbsp;Connect 4!&nbsp;&nbsp;</div>
+        <div class="container">
+            <h2>Rules:</h2>
+            <ul type="disc">
+                <li>There are two players 'X' and 'O'</li>
+                <li>The player should form four yellow or red balls either horizontally or vertically or diagonally to win the game</li>
+                <li>The game can be passed and played by two players.</li>
+                <li>Touch the column number to place your ball in the respecitve column</li>
+            </ul>
+        </div>
+        <button class="btn"><a href="Connect4GamePnP.html" style="text-decoration: none;color:white">Start play</a></button>
+    </body>
+</html>

@@ -1,0 +1,307 @@
+<html>
+    <head>
+        <title>Connect4Game</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <script src="bootstrap.min.js"></script>
+    </head>
+    <style>
+        @font-face {
+            font-family: 'Forte';
+            src: url('fonts/Forte.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body,html
+            {
+                height:100%;
+                display: flex;
+                margin:0;
+                align-items:center;
+                justify-content: center;
+                background-color: black;
+            }
+            .container-fluid
+            {
+                display: flex;
+                flex-direction: column;
+                align-items:center;
+                justify-content: center;
+                height:100%;
+                font-family:'Raleway';
+                color: white;
+            }
+            .container 
+            {
+                position: relative;
+                background: #000;
+                box-shadow: 0 0 50px #0ef;
+                border-radius: 20px;
+                overflow: hidden;
+                animation: animate 5s infinite;
+            }
+            .container::before 
+            {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: inherit;
+                z-index: -1;
+            }
+            .row 
+            {
+                display: flex;
+            }
+            .col
+            {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border:1px solid white;
+                width:60px;
+                height:60px;
+                font-size: 50px;
+                cursor:pointer;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            @keyframes animate 
+            {
+                0%{box-shadow: 0 0 50px #0ef;}
+                25%{box-shadow: 0 0 50px green;}
+                50%{box-shadow: 0 0 50px rgb(241, 52, 241);}
+                75%{box-shadow: 0 0 50px red;}
+                100%{box-shadow: 0 0 50px blue;}
+            }
+            .button-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        #reset, #exit {
+            background-color: green;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Raleway';
+            font-size: 15px;
+        }
+        #exit {
+            background-color: yellow;
+        }
+        .con {
+            font-family: forte;
+            font-size: 40px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+        .cont {
+            height: 25px;
+            width: 25px;
+            background-color: black;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+        #result
+            {
+                margin-top: 10px;
+            }
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+            }
+            .col {
+                width: 50px;
+                height: 50px;
+                font-size: 40px;
+            }
+            .button-container {
+                gap: 30px;
+            }
+            
+            .con {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .col {
+                width: 40px;
+                height: 40px;
+                font-size: 30px;
+            }
+            .button-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            #reset, #exit {
+                width: 100%;
+            }
+            .con {
+                font-size: 40px;
+            }
+        }
+    </style>
+    <body>
+        <div class="container-fluid">
+            <div class="con">Connect 4!</div>
+            <div class="container">
+                <div class="row">
+                    <div class="col" style="border-top:1px solid black;border-left:1px solid black;"><div class="cont cont11"></div></div>
+                    <div class="col" style="border-top:1px solid black;"><div class="cont cont12"></div></div>
+                    <div class="col" style="border-top:1px solid black;"><div class="cont cont13"></div></div>
+                    <div class="col" style="border-top:1px solid black;"><div class="cont cont14"></div></div>
+                    <div class="col" style="border-top:1px solid black;"><div class="cont cont15"></div></div>
+                    <div class="col" style="border-top:1px solid black;"><div class="cont cont16"></div></div>
+                    <div class="col" style="border-top:1px solid black;border-right:1px solid black;"><div class="cont cont17"></div></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="border-left:1px solid black;"><div class="cont cont21"></div></div>
+                    <div class="col"><div class="cont cont22"></div></div>
+                    <div class="col"><div class="cont cont23"></div></div>
+                    <div class="col"><div class="cont cont24"></div></div>
+                    <div class="col"><div class="cont cont25"></div></div>
+                    <div class="col"><div class="cont cont26"></div></div>
+                    <div class="col" style="border-right:1px solid black;"><div class="cont cont27"></div></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="border-left:1px solid black;"><div class="cont cont31"></div></div>
+                    <div class="col"><div class="cont cont32"></div></div>
+                    <div class="col"><div class="cont cont33"></div></div>
+                    <div class="col"><div class="cont cont34"></div></div>
+                    <div class="col"><div class="cont cont35"></div></div>
+                    <div class="col"><div class="cont cont36"></div></div>
+                    <div class="col" style="border-right:1px solid black;"><div class="cont cont37"></div></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="border-left:1px solid black;"><div class="cont cont41"></div></div>
+                    <div class="col"><div class="cont cont42"></div></div>
+                    <div class="col"><div class="cont cont43"></div></div>
+                    <div class="col"><div class="cont cont44"></div></div>
+                    <div class="col"><div class="cont cont45"></div></div>
+                    <div class="col"><div class="cont cont46"></div></div>
+                    <div class="col" style="border-right:1px solid black;"><div class="cont cont47"></div></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="border-left:1px solid black;"><div class="cont cont51"></div></div>
+                    <div class="col"><div class="cont cont52"></div></div>
+                    <div class="col"><div class="cont cont53"></div></div>
+                    <div class="col"><div class="cont cont54"></div></div>
+                    <div class="col"><div class="cont cont55"></div></div>
+                    <div class="col"><div class="cont cont56"></div></div>
+                    <div class="col" style="border-right:1px solid black;"><div class="cont cont57"></div></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="border-left:1px solid black;"><div class="cont cont61"></div></div>
+                    <div class="col"><div class="cont cont62"></div></div>
+                    <div class="col"><div class="cont cont63"></div></div>
+                    <div class="col"><div class="cont cont64"></div></div>
+                    <div class="col"><div class="cont cont65"></div></div>
+                    <div class="col"><div class="cont cont66"></div></div>
+                    <div class="col" style="border-right:1px solid black;"><div class="cont cont67"></div></div>
+                </div>
+                <div class="row">
+                    <div class="col" style="border-bottom:1px solid black;border-left:1px solid black;" onclick="makeMove(this,0)">1</div>
+                    <div class="col" style="border-bottom:1px solid black;" onclick="makeMove(this,1)">2</div>
+                    <div class="col" style="border-bottom:1px solid black;" onclick="makeMove(this,2)">3</div>
+                    <div class="col" style="border-bottom:1px solid black;" onclick="makeMove(this,3)">4</div>
+                    <div class="col" style="border-bottom:1px solid black;" onclick="makeMove(this,4)">5</div>
+                    <div class="col" style="border-bottom:1px solid black;" onclick="makeMove(this,5)">6</div>
+                    <div class="col" style="border-bottom:1px solid black;border-right:1px solid black;" onclick="makeMove(this,6)">7</div>
+                </div>
+            </div>
+            <div class="button-container">
+                <button id="reset" class="btn btn-secondary" onclick="resetGame()">Reset</button>
+                <button id="exit" class="btn btn-secondary"><a href="index.html" style="text-decoration: none;color:black;">Exit</a></button>
+            </div>
+            <div id="result"></div>
+        </div>
+        <script>
+            const row=6;
+            const col=7;
+            let currentPlayer='X';
+            let active=true;
+            let board=Array.from({length:row},()=>Array(col).fill(null));
+            function makeMove(cell,c)
+            {
+                if(!active)
+                    return;
+                for(let i=row-1;i>=0;i--) 
+	            {
+                    if(!board[i][c])
+		            {
+                        board[i][c]=currentPlayer;
+                        document.querySelector(`.cont${i+1}${c+1}`).style.backgroundColor = currentPlayer === 'X' ? 'yellow' : 'red';                        if(checkWin(currentPlayer))
+                        {
+                            document.getElementById('result').innerText=`Player ${currentPlayer} Wins!`;
+                        }
+                        currentPlayer=currentPlayer==='X'?'O':'X';
+                        break;
+                    }
+                }
+            }
+            function checkWin(player)
+            {
+                let i,j;
+                for(i=0;i<row;i++) 
+	            {
+                    for(j=0;j<=col-4;j++)
+		            {
+                        if(board[i][j]==player && board[i][j+1]==player && board[i][j+2]==player && board[i][j+3]==player)
+                        {
+                            active=false;
+                            return true;
+                        }
+                    }
+                }
+                for(i=0;i<=row-4;i++) 
+	            {
+                    for(j=0;j<col;j++) 
+		            {
+                        if(board[i][j]==player && board[i+1][j]==player && board[i+2][j]==player && board[i+3][j]==player) 
+                        {
+                            active=false;
+                            return true;
+                        }
+                    }
+                }
+                for(i=0;i<=row-4;i++) 
+	            {
+                    for(j=0;j<=col-4;j++) 
+		            {
+                        if(board[i][j]==player && board[i+1][j+1]==player && board[i+2][j+2]==player && board[i+3][j+3]==player) 
+                        {
+                            active=false;
+                            return true;
+                        }
+                    }
+                }
+                for(i=0;i<=row-4;i++) 
+	            {
+                    for(j=3;j<col;j++) 
+                    {
+                        if(board[i][j]==player && board[i+1][j-1]==player && board[i+2][j-2]==player && board[i+3][j-3]==player)
+                        {
+                            active=false;
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+            function resetGame() 
+            {
+                board=Array.from({ length:row},()=>Array(col).fill(null));
+                currentPlayer='X';
+                document.querySelectorAll('.cont').forEach(cell=>cell.style.backgroundColor="black");
+                document.getElementById('result').innerText='';
+                active=true;
+            }
+        </script>
+    </body>
+</html>
