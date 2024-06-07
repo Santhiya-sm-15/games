@@ -1,1 +1,2 @@
 # games
+This is the project which I was inspired to do while doing internship on DSA C++. This project is a website which consists of games. This website includes two games which are Tic Tac Toe and Connect 4 Game. These two games can be played with both computer and pass n play. The rules of the game are displayed before starting the games. This is the basic website which will be helpful for enhancing my skills.
